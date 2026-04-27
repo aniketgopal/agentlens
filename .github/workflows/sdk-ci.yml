@@ -1,0 +1,19 @@
+name: SDK CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  import-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install SDK
+        run: pip install -e ./sdk/python
+      - name: Import SDK
+        run: python -c "from agentlens import AgentLens, trace_agent, trace_step; print('sdk ok')"
