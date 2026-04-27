@@ -17,6 +17,7 @@ It is designed to give developers a local-first way to:
 What works today:
 - project creation and API key generation
 - Python SDK with fail-open tracing
+- OpenAI Agents SDK integration via tracing processor
 - run and step ingestion
 - run explorer and run inspector UI
 - security findings with status actions
@@ -170,6 +171,17 @@ make seed-demo
 This seeds:
 - a normal traced run from [`examples/simple-agent/main.py`](./examples/simple-agent/main.py)
 - a security-focused run from [`examples/security-demo/main.py`](./examples/security-demo/main.py)
+
+### 4b. Use OpenAI Agents SDK
+
+AgentLens can also mirror traces from the OpenAI Agents SDK using a custom tracing processor.
+
+```bash
+pip install aniket-agentlens-sdk openai-agents
+```
+
+Example:
+- [`examples/openai-agents/main.py`](./examples/openai-agents/main.py)
 
 ### 5. Inspect the results
 

@@ -44,6 +44,30 @@ def run_agent(message: str) -> dict[str, object]:
     return {"message": "done", "result": result}
 ```
 
+## OpenAI Agents SDK Integration
+
+Install both SDKs:
+
+```bash
+pip install aniket-agentlens-sdk openai-agents
+```
+
+Then register the AgentLens tracing processor:
+
+```python
+from agentlens import AgentLens, install_openai_agents_tracing
+
+client = AgentLens(
+    api_key="al_sk_your_key",
+    project_id="proj_your_project",
+    endpoint="http://localhost:8000",
+).configure()
+
+install_openai_agents_tracing(client)
+```
+
+This uses the OpenAI Agents SDK custom tracing processor hook so AgentLens receives the same traces and spans that the framework emits.
+
 ## Runtime Flow
 
 1. `AgentLens(...).configure()` sets the default SDK client.

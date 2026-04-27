@@ -48,9 +48,34 @@ def run_agent(message: str):
 - `AgentLens(...).configure()`
 - `@trace_agent`
 - `@trace_step`
+- `install_openai_agents_tracing(...)`
 - context-based run and step export
 - payload masking
 - fail-open export behavior
+
+## OpenAI Agents SDK
+
+Install both packages:
+
+```bash
+pip install aniket-agentlens-sdk openai-agents
+```
+
+Then register the integration:
+
+```python
+from agentlens import AgentLens, install_openai_agents_tracing
+
+client = AgentLens(
+    api_key="al_sk_your_key",
+    project_id="proj_your_project",
+    endpoint="http://localhost:8000",
+).configure()
+
+install_openai_agents_tracing(client)
+```
+
+AgentLens uses an OpenAI Agents SDK custom tracing processor to mirror framework traces and spans into the AgentLens backend.
 
 ## Current Gaps
 
