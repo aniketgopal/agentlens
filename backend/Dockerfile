@@ -7,6 +7,7 @@ WORKDIR /app
 
 COPY backend/pyproject.toml /app/backend/pyproject.toml
 COPY sdk/python/pyproject.toml /app/sdk/python/pyproject.toml
+COPY sdk/python/README.md /app/sdk/python/README.md
 COPY backend/app /app/backend/app
 COPY sdk/python/agentlens /app/sdk/python/agentlens
 COPY examples /app/examples

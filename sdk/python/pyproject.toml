@@ -1,18 +1,45 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "agentlens"
+name = "aniket-agentlens-sdk"
 version = "0.1.0"
+description = "Python tracing SDK for AgentLens, an open-source observability platform for AI agents."
+readme = "README.md"
 requires-python = ">=3.11"
+authors = [
+  { name = "Aniket Gopal", email = "gopal.aniket@gmail.com" },
+]
+license = "Apache-2.0"
+keywords = ["agents", "ai", "llm", "observability", "security", "tracing"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Software Development :: Debuggers",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 dependencies = [
   "requests>=2.32.0,<3.0.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/aniketgopal/agentlens"
+Repository = "https://github.com/aniketgopal/agentlens"
+Issues = "https://github.com/aniketgopal/agentlens/issues"
+Documentation = "https://github.com/aniketgopal/agentlens/tree/main/docs"
+
 [project.optional-dependencies]
 dev = [
+  "build>=1.2.2,<2.0.0",
   "pytest>=8.3.0,<9.0.0",
+  "twine>=6.1.0,<7.0.0",
 ]
 
 [tool.setuptools]

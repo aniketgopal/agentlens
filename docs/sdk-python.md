@@ -4,6 +4,15 @@ The Python SDK is the current ingestion path for AgentLens.
 
 Location: [`../sdk/python`](../sdk/python)
 
+PyPI distribution name: `aniket-agentlens-sdk`  
+Python import name: `agentlens`
+
+## Install
+
+```bash
+pip install aniket-agentlens-sdk
+```
+
 ## Goals
 
 - minimal integration effort

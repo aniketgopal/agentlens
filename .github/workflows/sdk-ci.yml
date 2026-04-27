@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  import-check:
+  sdk-checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,6 +14,11 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install SDK
-        run: pip install -e ./sdk/python
+        run: pip install -e ./sdk/python[dev]
       - name: Import SDK
         run: python -c "from agentlens import AgentLens, trace_agent, trace_step; print('sdk ok')"
+      - name: Run SDK tests
+        run: pytest sdk/python/tests
+      - name: Build SDK package
+        working-directory: sdk/python
+        run: python -m build
