@@ -34,13 +34,13 @@ AgentLens(
     endpoint="http://localhost:8000",
 ).configure()
 
-@trace_step(type="tool_call", name="search_candidates")
-def search_candidates(query: str):
-    return {"matches": ["candidate_1"], "query": query}
+@trace_step(type="tool_call", name="search_documents")
+def search_documents(query: str):
+    return {"matches": ["document_1"], "query": query}
 
-@trace_agent(name="candidate_screening_agent")
+@trace_agent(name="knowledge_assistant_agent")
 def run_agent(message: str):
-    return {"answer": search_candidates(message)}
+    return {"answer": search_documents(message)}
 ```
 
 ## Current Features

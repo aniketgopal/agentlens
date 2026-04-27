@@ -26,7 +26,7 @@ def test_string_evaluation_flow_with_required_and_forbidden_terms(monkeypatch) -
         id="run_1",
         project_id="proj_1",
         name="demo",
-        output={"answer": "candidate approved and policy compliant"},
+        output={"answer": "request approved and policy compliant"},
         started_at=utc_now(),
         created_at=utc_now(),
     )

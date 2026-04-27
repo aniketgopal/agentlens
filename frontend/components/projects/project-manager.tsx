@@ -103,7 +103,7 @@ export function ProjectManager({
               className="control-input"
               value={name}
               onChange={(event) => setName(event.target.value)}
-              placeholder="Recruiting Agent"
+              placeholder="Operations Assistant"
             />
           </label>
           <label className="control-group">
@@ -112,7 +112,7 @@ export function ProjectManager({
               className="control-input"
               value={description}
               onChange={(event) => setDescription(event.target.value)}
-              placeholder="Candidate screening workflow"
+              placeholder="Internal workflow tracing project"
             />
           </label>
           <button

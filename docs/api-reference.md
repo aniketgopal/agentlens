@@ -16,8 +16,8 @@ Request:
 
 ```json
 {
-  "name": "Recruiting Agent",
-  "description": "Candidate screening workflow"
+  "name": "Operations Assistant",
+  "description": "Internal workflow tracing project"
 }
 ```
 

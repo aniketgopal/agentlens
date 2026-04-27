@@ -100,7 +100,7 @@ export function EvaluationManager({
               className="control-input"
               value={forbiddenTerms}
               onChange={(event) => setForbiddenTerms(event.target.value)}
-              placeholder="salary promise, private notes"
+              placeholder="confidential terms, private notes"
             />
           </label>
           <label className="control-group">

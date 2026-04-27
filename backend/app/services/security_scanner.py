@@ -41,8 +41,8 @@ RULES: tuple[SecurityRule, ...] = (
         rule_id="sensitive_private_notes",
         severity="high",
         category="sensitive_data_leakage",
-        message="Possible sensitive private notes exposure detected",
-        patterns=("private notes", "recruiter's private notes", "internal note"),
+        message="Possible sensitive internal notes exposure detected",
+        patterns=("private notes", "internal note", "confidential note"),
     ),
 )
 

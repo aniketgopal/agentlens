@@ -9,16 +9,16 @@ client = AgentLens(
 ).configure()
 
 
-@trace_step(type="tool_call", name="search_candidates")
-def search_candidates(query: str) -> dict[str, object]:
-    return {"matches": ["candidate_1", "candidate_2"], "query": query}
+@trace_step(type="tool_call", name="search_documents")
+def search_documents(query: str) -> dict[str, object]:
+    return {"matches": ["document_1", "document_2"], "query": query}
 
 
-@trace_agent(name="candidate_screening_agent")
+@trace_agent(name="knowledge_assistant_agent")
 def run_agent(message: str) -> dict[str, object]:
-    result = search_candidates(message)
+    result = search_documents(message)
     return {"message": "done", "result": result}
 
 
 if __name__ == "__main__":
-    print(run_agent("Find Java backend candidates in Pune"))
+    print(run_agent("Find architecture notes for the payment retry workflow"))
