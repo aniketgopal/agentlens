@@ -53,6 +53,8 @@ export default async function HomePage({
         <section className="card">
           <h3>No projects yet</h3>
           <p className="muted">Create your first project from the Projects page, then generate an API key and start tracing runs.</p>
+          <p className="muted">For a reproducible demo with seeded runs and security findings:</p>
+          <pre>docker compose exec -T backend python /app/scripts/bootstrap_demo.py</pre>
         </section>
       ) : (
         <RunExplorer

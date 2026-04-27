@@ -29,6 +29,16 @@ What is still in progress:
 - broader security rule coverage
 - stronger test coverage and frontend polish
 
+## Why Use AgentLens
+
+AgentLens is most useful when an AI agent is already running in production or internal workflows, but the team cannot answer basic debugging questions quickly:
+- what input triggered this run
+- which tool or model call produced the bad result
+- where sensitive data leaked into a response
+- whether a change improved or regressed behavior
+
+This initial version is strongest for teams who want a local-first Python tracing stack with built-in security and evaluation signals, without building internal tooling from scratch.
+
 ## Documentation
 
 - [Getting Started](./docs/getting-started.md)
@@ -95,6 +105,12 @@ Services:
 - backend: `http://localhost:8000`
 - MongoDB: `mongodb://localhost:27017`
 
+Optional convenience:
+
+```bash
+make up
+```
+
 ### 3. Create a project and API key
 
 Open `http://localhost:3000/projects`.
@@ -137,6 +153,24 @@ def run_agent(message: str):
     return {"answer": search_candidates(message)}
 ```
 
+### 4a. Seed the full demo flow
+
+To create a project, generate an API key, send a normal trace, and send a security-focused trace:
+
+```bash
+docker compose exec -T backend python /app/scripts/bootstrap_demo.py
+```
+
+Optional convenience:
+
+```bash
+make seed-demo
+```
+
+This seeds:
+- a normal traced run from [`examples/simple-agent/main.py`](./examples/simple-agent/main.py)
+- a security-focused run from [`examples/security-demo/main.py`](./examples/security-demo/main.py)
+
 ### 5. Inspect the results
 
 Use the UI:
@@ -144,6 +178,8 @@ Use the UI:
 - `/dashboard` for overview
 - `/security` for findings
 - `/evaluations` for evaluations
+
+The seeded security demo intentionally produces prompt-injection and sensitive-data findings so the security workflow is visible immediately.
 
 ## Local Development
 
@@ -246,6 +282,9 @@ Trusted Publishing is configured through GitHub Actions, so no long-lived PyPI t
 
 Near-term priorities:
 
+- one first-class framework integration for a popular agent stack
+- frictionless onboarding and seeded demo flow
+- stronger debugging ergonomics around nested runs and step context
 - richer SDK framework integrations
 - stronger evaluation coverage
 - broader security rule set

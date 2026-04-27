@@ -51,6 +51,18 @@ Important:
 - install name: `aniket-agentlens-sdk`
 - import name: `agentlens`
 
+For a deterministic local demo that creates a project, generates an API key, sends a normal trace, and sends a security-focused trace:
+
+```bash
+docker compose exec -T backend python /app/scripts/bootstrap_demo.py
+```
+
+If you use `make` locally:
+
+```bash
+make seed-demo
+```
+
 ## Step 5: Inspect the data
 
 Open:

@@ -48,11 +48,13 @@ export default async function SecurityPage({
         <section className="card">
           <h3>No projects yet</h3>
           <p className="muted">Create a project and start tracing runs to generate security findings.</p>
+          <pre>docker compose exec -T backend python /app/scripts/bootstrap_demo.py</pre>
         </section>
       ) : findings.length === 0 ? (
         <section className="card">
           <h3>No findings yet</h3>
           <p className="muted">Run a trace that contains prompt injection or sensitive-data patterns.</p>
+          <pre>docker compose exec -T backend python /app/scripts/bootstrap_demo.py</pre>
         </section>
       ) : (
         <FindingsList initialFindings={findings} />
