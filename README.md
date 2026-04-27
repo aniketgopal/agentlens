@@ -2,6 +2,9 @@
 
 AgentLens is an open-source reliability, debugging, evaluation, and security platform for AI agents.
 
+[![PyPI](https://img.shields.io/pypi/v/aniket-agentlens-sdk)](https://pypi.org/project/aniket-agentlens-sdk/)
+[![Python](https://img.shields.io/pypi/pyversions/aniket-agentlens-sdk)](https://pypi.org/project/aniket-agentlens-sdk/)
+
 It is designed to give developers a local-first way to:
 - trace agent runs and steps
 - inspect prompts, tool calls, outputs, and errors
@@ -31,6 +34,7 @@ What is still in progress:
 - [Getting Started](./docs/getting-started.md)
 - [Architecture](./docs/architecture.md)
 - [Python SDK](./docs/sdk-python.md)
+- [SDK Release](./docs/sdk-release.md)
 - [API Reference](./docs/api-reference.md)
 - [Security Model](./docs/security-model.md)
 - [Deployment](./docs/deployment.md)
@@ -101,7 +105,17 @@ Open `http://localhost:3000/projects`.
 
 ### 4. Send a traced run
 
-Use the example in [`examples/simple-agent/main.py`](./examples/simple-agent/main.py) or install the SDK directly.
+Install the published SDK:
+
+```bash
+pip install aniket-agentlens-sdk
+```
+
+Then use the example in [`examples/simple-agent/main.py`](./examples/simple-agent/main.py) or instrument your own app.
+
+Important:
+- install name: `aniket-agentlens-sdk`
+- import name: `agentlens`
 
 Example:
 
@@ -166,6 +180,12 @@ cd sdk/python
 pip install -e .
 ```
 
+For a published install instead of editable local development:
+
+```bash
+pip install aniket-agentlens-sdk
+```
+
 ## Configuration
 
 Important environment variables:
@@ -194,6 +214,33 @@ cd frontend
 npm install
 npm run build
 ```
+
+SDK:
+
+```bash
+cd sdk/python
+pip install -e .[dev]
+pytest tests
+python -m build
+```
+
+## SDK Release
+
+The Python SDK is published to PyPI as `aniket-agentlens-sdk`.
+
+Public install:
+
+```bash
+pip install aniket-agentlens-sdk
+```
+
+Maintainer flow:
+
+1. Update `version` in [`sdk/python/pyproject.toml`](./sdk/python/pyproject.toml)
+2. Push the change to `main`
+3. Trigger [`.github/workflows/publish-sdk.yml`](./.github/workflows/publish-sdk.yml) from GitHub Actions or push a tag like `sdk-v0.1.1`
+
+Trusted Publishing is configured through GitHub Actions, so no long-lived PyPI token is required in the repository.
 
 ## Roadmap
 

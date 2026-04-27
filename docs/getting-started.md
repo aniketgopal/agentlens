@@ -39,7 +39,17 @@ Open `http://localhost:3000/projects`.
 
 ## Step 4: Send a traced run
 
-Use the example in [`../examples/simple-agent/main.py`](../examples/simple-agent/main.py) or instrument your own Python code with the SDK.
+Install the SDK:
+
+```bash
+pip install aniket-agentlens-sdk
+```
+
+Then use the example in [`../examples/simple-agent/main.py`](../examples/simple-agent/main.py) or instrument your own Python code with the SDK.
+
+Important:
+- install name: `aniket-agentlens-sdk`
+- import name: `agentlens`
 
 ## Step 5: Inspect the data
 

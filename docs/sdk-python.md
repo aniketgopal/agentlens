@@ -13,6 +13,8 @@ Python import name: `agentlens`
 pip install aniket-agentlens-sdk
 ```
 
+Published package page: https://pypi.org/project/aniket-agentlens-sdk/
+
 ## Goals
 
 - minimal integration effort
@@ -59,3 +61,7 @@ def run_agent(message: str):
 ## Design Rule
 
 The SDK must never break the user application by default when the AgentLens backend is unavailable.
+
+## Maintainer Note
+
+SDK release flow is documented in [`./sdk-release.md`](./sdk-release.md).
