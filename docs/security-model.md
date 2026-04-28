@@ -35,7 +35,7 @@ The MVP scanner detects basic patterns such as:
 
 - prompt injection attempts
 - system prompt leakage
-- private-notes exposure
+- internal-notes exposure
 
 ## Current Limitations
 
@@ -43,6 +43,7 @@ The MVP scanner detects basic patterns such as:
 - masking is regex-based and not domain-specific
 - findings are heuristic, not authoritative
 - no multi-tenant auth model exists yet
+- field-level evidence and deeper semantic analysis are not implemented yet
 
 ## Recommended Usage
 

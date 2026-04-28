@@ -25,7 +25,7 @@ What works today:
 - server-side masking and payload-size enforcement
 
 What is still in progress:
-- richer framework integrations in the SDK
+- additional framework integrations beyond OpenAI Agents SDK
 - more evaluation types
 - broader security rule coverage
 - stronger test coverage and frontend polish
@@ -294,10 +294,9 @@ Trusted Publishing is configured through GitHub Actions, so no long-lived PyPI t
 
 Near-term priorities:
 
-- one first-class framework integration for a popular agent stack
 - frictionless onboarding and seeded demo flow
+- additional framework integrations beyond OpenAI Agents SDK
 - stronger debugging ergonomics around nested runs and step context
-- richer SDK framework integrations
 - stronger evaluation coverage
 - broader security rule set
 - improved frontend polish and testing

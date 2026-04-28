@@ -14,6 +14,12 @@ cp .env.example .env
 docker compose up --build -d
 ```
 
+To seed a reproducible demo project and traces:
+
+```bash
+make seed-demo
+```
+
 Frontend: `http://localhost:3000`  
 Backend: `http://localhost:8000`
 
@@ -21,5 +27,6 @@ Backend: `http://localhost:8000`
 
 - Run backend tests if you changed backend code.
 - Run a frontend build if you changed frontend code.
+- Run SDK tests or at least `python -m build` from `sdk/python` if you changed SDK code.
 - Update docs when the user-facing workflow changes.
 - Avoid unrelated formatting-only changes.

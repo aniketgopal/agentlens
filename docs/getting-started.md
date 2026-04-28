@@ -63,6 +63,11 @@ If you use `make` locally:
 make seed-demo
 ```
 
+Optional framework example:
+
+- OpenAI Agents SDK example: [`../examples/openai-agents/main.py`](../examples/openai-agents/main.py)
+- install with: `pip install aniket-agentlens-sdk openai-agents`
+
 ## Step 5: Inspect the data
 
 Open:

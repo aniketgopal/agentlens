@@ -16,3 +16,4 @@ Report vulnerabilities privately to the repository maintainers rather than openi
 - API keys are hashed before storage.
 - Server-side masking is applied on run and step payloads.
 - Basic security findings are generated from stored traces.
+- Current findings focus on prompt injection, system prompt leakage, and internal-notes exposure.

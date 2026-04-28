@@ -8,11 +8,18 @@ Use Docker Compose:
 docker compose up --build -d
 ```
 
+Optional convenience:
+
+```bash
+make up
+```
+
 ## Services
 
 - `frontend`
 - `backend`
 - `mongodb`
+- `scripts/bootstrap_demo.py` available inside the backend container for seeded demo setup
 
 ## Environment
 
@@ -25,6 +32,20 @@ Primary variables:
 - `AGENTLENS_MASK_PII`
 - `AGENTLENS_MAX_PAYLOAD_BYTES`
 - `NEXT_PUBLIC_AGENTLENS_API_BASE_URL`
+
+## Demo Bootstrap
+
+After the stack is up, you can seed a reproducible project and demo traces:
+
+```bash
+docker compose exec -T backend python /app/scripts/bootstrap_demo.py
+```
+
+Optional convenience:
+
+```bash
+make seed-demo
+```
 
 ## Production Notes
 
@@ -40,4 +61,9 @@ Before productionizing:
 
 ## CI/CD Notes
 
-The repository includes basic GitHub Actions workflows for backend, frontend, and SDK sanity checks.
+The repository includes GitHub Actions workflows for:
+
+- backend CI
+- frontend build validation
+- SDK CI
+- SDK Trusted Publishing to PyPI

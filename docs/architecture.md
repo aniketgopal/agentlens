@@ -10,6 +10,11 @@ Initial MVP flow:
 
 The Python SDK captures runs and steps, masks payloads locally where configured, and exports them to the backend.
 
+Current integration modes:
+
+- direct decorator-based tracing with `@trace_agent` and `@trace_step`
+- OpenAI Agents SDK tracing mirroring via a custom tracing processor
+
 ### Backend
 
 The FastAPI backend handles:
@@ -41,6 +46,12 @@ The Next.js frontend provides:
 - run inspector
 - security findings review
 - evaluation execution and history
+
+## Current Strengths
+
+- local-first onboarding with a seeded demo flow
+- generic run/step model that is not tied to one industry
+- built-in security and evaluation signals on top of traces
 
 ## Current Non-Goals
 

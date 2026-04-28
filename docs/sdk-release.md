@@ -16,7 +16,7 @@ pip install aniket-agentlens-sdk
 Users import:
 
 ```python
-from agentlens import AgentLens, trace_agent, trace_step
+from agentlens import AgentLens, trace_agent, trace_step, install_openai_agents_tracing
 ```
 
 ## Versioning

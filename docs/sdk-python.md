@@ -77,9 +77,13 @@ install_openai_agents_tracing(client)
 
 AgentLens uses an OpenAI Agents SDK custom tracing processor to mirror framework traces and spans into the AgentLens backend.
 
+Example file:
+
+- [`../examples/openai-agents/main.py`](../examples/openai-agents/main.py)
+
 ## Current Gaps
 
-- framework-specific integrations are still limited
+- framework integrations are still limited beyond the OpenAI Agents SDK path
 - async flows need broader verification coverage
 - buffering/retry behavior is still minimal
 
