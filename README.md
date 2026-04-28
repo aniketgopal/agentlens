@@ -5,30 +5,40 @@ AgentLens is an open-source reliability, debugging, evaluation, and security pla
 [![PyPI](https://img.shields.io/pypi/v/aniket-agentlens-sdk)](https://pypi.org/project/aniket-agentlens-sdk/)
 [![Python](https://img.shields.io/pypi/pyversions/aniket-agentlens-sdk)](https://pypi.org/project/aniket-agentlens-sdk/)
 
-It is designed to give developers a local-first way to:
-- trace agent runs and steps
-- inspect prompts, tool calls, outputs, and errors
-- flag basic security issues
-- run simple evaluations against stored runs
-- manage projects and ingestion API keys
+AgentLens gives developers a local-first way to trace AI agent runs, inspect failures, surface basic security risks, and run lightweight evaluations without building internal observability tooling from scratch.
 
-## Current Scope
+Best fit today:
+- Python agent applications that need run and step visibility
+- teams debugging tool calls, model outputs, and security-sensitive behavior
+- internal platforms that want a self-hosted stack instead of a hosted SaaS dependency
 
-What works today:
-- project creation and API key generation
-- Python SDK with fail-open tracing
-- OpenAI Agents SDK integration via tracing processor
-- run and step ingestion
-- run explorer and run inspector UI
-- security findings with status actions
-- evaluation MVP with stored results
+What you get in `v0.1.x`:
+- Python SDK with decorator-based tracing
+- OpenAI Agents SDK integration via a tracing processor
+- run explorer and debugger-style run inspector
+- security findings and status actions
+- evaluation MVP for stored runs
 - server-side masking and payload-size enforcement
 
-What is still in progress:
+Still in progress:
 - additional framework integrations beyond OpenAI Agents SDK
-- more evaluation types
 - broader security rule coverage
-- stronger test coverage and frontend polish
+- more evaluation types
+- deeper frontend polish and test coverage
+
+## Try It
+
+Fastest local path:
+
+```bash
+cp .env.example .env
+docker compose up --build -d
+docker compose exec -T backend python /app/scripts/bootstrap_demo.py
+```
+
+Then open:
+- `http://localhost:3000/`
+- `http://localhost:3000/security`
 
 ## Why Use AgentLens
 
@@ -39,16 +49,6 @@ AgentLens is most useful when an AI agent is already running in production or in
 - whether a change improved or regressed behavior
 
 This initial version is strongest for teams who want a local-first Python tracing stack with built-in security and evaluation signals, without building internal tooling from scratch.
-
-## Documentation
-
-- [Getting Started](./docs/getting-started.md)
-- [Architecture](./docs/architecture.md)
-- [Python SDK](./docs/sdk-python.md)
-- [SDK Release](./docs/sdk-release.md)
-- [API Reference](./docs/api-reference.md)
-- [Security Model](./docs/security-model.md)
-- [Deployment](./docs/deployment.md)
 
 ## Screenshots
 
@@ -75,6 +75,16 @@ Current runtime path:
 `Python SDK -> FastAPI -> MongoDB -> Next.js`
 
 See [`docs/architecture.md`](./docs/architecture.md) for the high-level layout.
+
+## Documentation
+
+- [Getting Started](./docs/getting-started.md)
+- [Architecture](./docs/architecture.md)
+- [Python SDK](./docs/sdk-python.md)
+- [SDK Release](./docs/sdk-release.md)
+- [API Reference](./docs/api-reference.md)
+- [Security Model](./docs/security-model.md)
+- [Deployment](./docs/deployment.md)
 
 ## Repository Layout
 
